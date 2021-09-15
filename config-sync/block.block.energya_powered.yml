@@ -1,0 +1,22 @@
+uuid: 72236b15-217a-4305-b395-1c76253690bc
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - energya
+_core:
+  default_config_hash: jQQUUWN2Uxr5qZtc9zcJKBCxpKY8orN1u2HPqYYRQDI
+id: energya_powered
+theme: energya
+region: footer_fifth
+weight: 10
+provider: null
+plugin: system_powered_by_block
+settings:
+  id: system_powered_by_block
+  label: 'Powered by Drupal'
+  provider: system
+  label_display: '0'
+visibility: {  }

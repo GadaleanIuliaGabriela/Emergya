@@ -1,0 +1,22 @@
+uuid: 5c9fc4f9-d73a-4009-a35a-2fbe4223752c
+langcode: en
+status: true
+dependencies:
+  theme:
+    - energya
+_core:
+  default_config_hash: X9I1OB0W3WlWtrK-CNcg6hNWwa8wficanpH8pYnDZDE
+id: energya_local_tasks
+theme: energya
+region: content
+weight: -40
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: true
+visibility: {  }
