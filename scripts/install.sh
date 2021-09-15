@@ -1,6 +1,6 @@
 #!/bin/bash
 
-composer install
+composer install -y
 
 # Waits until mysql container is installed
 until nc -z -v -w1 db 3306
