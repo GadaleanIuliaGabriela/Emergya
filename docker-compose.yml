@@ -1,0 +1,29 @@
+version: '3'
+services:
+  db:
+    image: mariadb:10.3
+    container_name: mysql_drupal
+    environment:
+      MYSQL_ROOT_PASSWORD: drupal
+    ports:
+      - "3306:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./docker/mysql:/docker-entrypoint-initdb.d/:ro
+    restart: always
+  drupal:
+    container_name: drupal
+    depends_on:
+      - db
+    build: .
+    ports:
+      - "2345:80"
+      - "2443:443"
+    volumes:
+      - ./:/var/www/html
+    restart: always
+    environment:
+      - SITE_INSTALL=1
+      - XDEBUG_INSTALL=1
+volumes:
+  db_data:
