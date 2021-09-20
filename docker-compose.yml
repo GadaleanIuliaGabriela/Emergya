@@ -25,6 +25,6 @@ services:
     restart: always
     environment:
       - SITE_INSTALL=1
-#      - XDEBUG_INSTALL=1
+      - XDEBUG_INSTALL=1
 volumes:
   db_data:
