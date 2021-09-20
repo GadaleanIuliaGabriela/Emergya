@@ -1,25 +1,28 @@
 <?php
 
+use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
 use Drupal\Core\Entity\EntityInterface;
-use Drupal\Core\Session\AccountInterface;
-use Drupal\node\NodeInterface;
 
 /**
- * Implements hook_entity_access().
+ * Implements hook_node_view().
+ * @param array $build
  * @param EntityInterface $entity
- * @param $op
- * @param AccountInterface $account
+ * @param EntityViewDisplayInterface $display
+ * @param $view_mode
  */
-function basic_content_entity_access(EntityInterface $entity, $op, AccountInterface $account)
-{
-  $node = \Drupal::routeMatch()->getParameter('node');
-  if ($node instanceof NodeInterface) {
-    $protected_field_value = $node->get('field_protected')->get(0)->getValue()['value'];
-    if ($protected_field_value == "1") {
-      dump("pa" . 1);
-    }
-    else {
-      dump("pa");
+function basic_content_node_view(
+  array &$build,
+  \Drupal\Core\Entity\EntityInterface $entity,
+  EntityViewDisplayInterface $display,
+  $view_mode
+) {
+  $bundle = $entity->bundle();
+  if ($bundle == 'product') {
+    // Access field data.
+    $protected = $entity->get('field_protected')->get(0)->value;
+    if ($protected) {
+      $build['body'][0]['#cookie_content_blocker'] = true;
     }
   }
+
 }
