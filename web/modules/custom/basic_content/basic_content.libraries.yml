@@ -1,0 +1,4 @@
+basic-content-protected-product:
+  js:
+    js/protected.js: {preprocess: false}
+

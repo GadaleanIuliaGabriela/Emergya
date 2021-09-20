@@ -1,0 +1,5 @@
+name: 'Basic Content'
+type: module
+description: 'Defines a basic content module'
+core: 8.x
+package: custom

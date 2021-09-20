@@ -1,0 +1,25 @@
+<?php
+
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Session\AccountInterface;
+use Drupal\node\NodeInterface;
+
+/**
+ * Implements hook_entity_access().
+ * @param EntityInterface $entity
+ * @param $op
+ * @param AccountInterface $account
+ */
+function basic_content_entity_access(EntityInterface $entity, $op, AccountInterface $account)
+{
+  $node = \Drupal::routeMatch()->getParameter('node');
+  if ($node instanceof NodeInterface) {
+    $protected_field_value = $node->get('field_protected')->get(0)->getValue()['value'];
+    if ($protected_field_value == "1") {
+      dump("pa" . 1);
+    }
+    else {
+      dump("pa");
+    }
+  }
+}
