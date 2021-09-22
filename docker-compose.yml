@@ -26,5 +26,8 @@ services:
     environment:
       - SITE_INSTALL=1
       - XDEBUG_INSTALL=1
+  selenium.dev:
+    image: selenium/standalone-chrome-debug:3.12.0
+    container_name: selenium
 volumes:
   db_data:

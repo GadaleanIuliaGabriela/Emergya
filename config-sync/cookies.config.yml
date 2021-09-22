@@ -10,7 +10,7 @@ settings_as_link: false
 group_consent: true
 cookie_docs: true
 lib_load_from_cdn: true
-lib_scroll_limit: 250
+lib_scroll_limit: 0
 use_default_styles: true
 store_auth_user_consent: 0
 _core:
