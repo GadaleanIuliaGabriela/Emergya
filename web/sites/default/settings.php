@@ -290,7 +290,7 @@ $databases = [];
  *   $settings['hash_salt'] = file_get_contents('/home/example/salt.txt');
  * @endcode
  */
-$settings['hash_salt'] = 'PtcABMRwkpN5IIR0Wqa4TWx6VP9otr6ShomuZTDSuSP5J8m6RuRzH6FZIt4szoqePuS10iMI6Q';
+$settings['hash_salt'] = 'skLO_gr42c5nLGssNXi1vR2soQDofH5HWXlHYbdsU5K9MYsFWP2Rq-VkeMcTozcpAoIwCSa0Zg';
 
 /**
  * Deployment identifier.
@@ -778,6 +778,22 @@ $settings['entity_update_backup'] = TRUE;
  */
 $settings['migrate_node_migrate_type_classic'] = FALSE;
 
+$databases['default']['default'] = array (
+  'database' => 'drupal',
+  'username' => 'root',
+  'password' => 'drupal',
+  'prefix' => '',
+  'host' => 'db',
+  'port' => '3306',
+  'namespace' => 'Drupal\\Core\\Database\\Driver\\mysql',
+  'driver' => 'mysql',
+);
+$settings['config_sync_directory'] = '../config-sync';
+
+if(getenv('CMS_ENVIRONMENT')) {
+  include $app_root . '/' . $site_path . '/settings.' . getenv('CMS_ENVIRONMENT') . ".php";
+}
+
 /**
  * Load local development override configuration, if available.
  *
@@ -791,14 +807,3 @@ $settings['migrate_node_migrate_type_classic'] = FALSE;
 if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
    include $app_root . '/' . $site_path . '/settings.local.php';
 }
-$databases['default']['default'] = array (
-  'database' => 'drupal',
-  'username' => 'root',
-  'password' => 'drupal',
-  'prefix' => '',
-  'host' => 'db',
-  'port' => '3306',
-  'namespace' => 'Drupal\\Core\\Database\\Driver\\mysql',
-  'driver' => 'mysql',
-);
-$settings['config_sync_directory'] = '../config-sync';

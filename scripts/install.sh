@@ -7,15 +7,24 @@ until nc -z -v -w1 db 3306
 do
    sleep 5
 done
+until nc -z -v -w1 db-test 3306
+do
+   sleep 5
+done
 
 # Install site optionally
 if [[ "${SITE_INSTALL}" == "1" ]]; then
-    printf "\n- Installing site -\n\n"
+  printf "\n- Installing site -\n\n"
+  # Test env install
+  if [[ "${CMS_ENVIRONMENT}" == "test" ]]; then
+    drush site-install -y test --db-url=mysql://root:drupal@db-test:3306/drupal --site-name=DrupalProjectTest --account-name=admin --account-pass=admin --account-mail=gadalean.iulia.gabriela@gmail.com
+  else
     drush site-install -y test --db-url=mysql://root:drupal@db:3306/drupal --site-name=DrupalProject --account-name=admin --account-pass=admin --account-mail=gadalean.iulia.gabriela@gmail.com
-    drush cset system.site uuid "29ad5c9a-0f76-4799-b8ac-5cd09c743191"
-    drush entity:delete shortcut_set
-    drush cset language.entity.en uuid "b6f99eeb-3ec8-4f40-a067-91f03e03d42b"
-    printf "\n- Site has been successfully installed -\n"
+  fi
+  drush cset system.site uuid "29ad5c9a-0f76-4799-b8ac-5cd09c743191"
+  drush entity:delete shortcut_set
+  drush cset language.entity.en uuid "b6f99eeb-3ec8-4f40-a067-91f03e03d42b"
+  printf "\n- Site has been successfully installed -\n"
 fi
 
 # Install xdebug optionally

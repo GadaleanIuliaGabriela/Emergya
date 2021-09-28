@@ -2,6 +2,7 @@ FROM drupal:8-apache
 
 ARG SITE_INSTALL
 ARG XDEBUG_INSTALL
+ARG CMS_ENVIRONMENT
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
   ssl-cert \
