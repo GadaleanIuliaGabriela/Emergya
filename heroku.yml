@@ -4,7 +4,7 @@ setup:
       as: DATABASE
 build:
   docker:
-    web: prod/Dockerfile
+    web: Dockerfileprod
   config:
     CMS_ENVIRONMENT: prod
     SITE_INSTALL: 1

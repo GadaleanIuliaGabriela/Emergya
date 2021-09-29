@@ -18,7 +18,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 RUN rm -rf /var/www/html/*
 
-COPY ../ /opt/drupal
+COPY . /opt/drupal
 
 RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" && \
   php composer-setup.php && \
