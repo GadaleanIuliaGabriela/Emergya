@@ -1,0 +1,28 @@
+uuid: 3a4aee1d-9bb7-4a2e-ab90-df265d97a275
+langcode: en
+status: true
+dependencies:
+  module:
+    - cookies
+    - node
+  theme:
+    - energya
+id: cookiesui
+theme: energya
+region: content
+weight: 0
+provider: null
+plugin: cookies_ui_block
+settings:
+  id: cookies_ui_block
+  label: 'Cookies UI'
+  provider: cookies
+  label_display: '0'
+visibility:
+  node_type:
+    id: node_type
+    bundles:
+      product: product
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

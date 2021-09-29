@@ -1,0 +1,23 @@
+uuid: e4cce657-cfc8-4807-ab1e-d6a07403e893
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_qty
+    - node.type.product
+id: node.product.field_qty
+field_name: field_qty
+entity_type: node
+bundle: product
+label: qty
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

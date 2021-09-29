@@ -1,0 +1,40 @@
+default:
+  suites:
+    default:
+      contexts:
+        - Drupal\DrupalExtension\Context\DrupalContext
+        - FeatureContext
+        - Drupal\DrupalExtension\Context\MessageContext
+        - Drupal\DrupalExtension\Context\DrushContext
+  extensions:
+    Behat\MinkExtension:
+      base_url: http://drupal
+      goutte: ~
+      files_path: /home/seluser/files
+      selenium2:
+        browser: chrome
+        wd_host: http://selenium.dev:4444/wd/hub
+    Drupal\MinkExtension:
+      base_url: http://drupal
+      goutte: ~
+      files_path: /home/seluser/files
+      browser_name: chrome
+      ajax_timeout: 10
+      selenium2:
+        browser: chrome
+        wd_host: http://selenium.dev:4444/wd/hub
+    Drupal\DrupalExtension:
+      blackbox: ~
+      api_driver: drupal
+      drupal:
+        drupal_root: "/opt/drupal/web"
+#      text:
+#        log_out: "Log out"
+#        log_in: "Log in"
+#        login_url: "/user/login"
+#        username_field: "name"
+#        password_field: "pass"
+#      region_map:
+#        header: "header"
+#        page: "#main-wrapper"
+#        body: "body"

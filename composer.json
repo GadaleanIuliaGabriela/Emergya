@@ -16,6 +16,8 @@
     ],
     "require": {
         "composer/installers": "^1.2",
+        "drupal/cookie_content_blocker": "^1.7",
+        "drupal/cookies": "^1.0",
         "drupal/core-composer-scaffold": "^8.8",
         "drupal/core-project-message": "^8.8",
         "drupal/core-recommended": "^8.8",
@@ -83,5 +85,8 @@
                 "      composer remove drupal/core-project-message"
             ]
         }
+    },
+    "require-dev": {
+        "drupal/drupal-extension": "^4.1"
     }
 }

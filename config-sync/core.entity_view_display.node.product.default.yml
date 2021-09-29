@@ -21,12 +21,12 @@ content:
   body:
     label: hidden
     type: text_default
-    weight: 101
+    weight: 1
     settings: {  }
     third_party_settings: {  }
     region: content
   field_image_product:
-    weight: 105
+    weight: 3
     label: above
     settings:
       image_style: ''
@@ -35,7 +35,7 @@ content:
     type: image
     region: content
   field_price:
-    weight: 103
+    weight: 2
     label: above
     settings:
       thousand_separator: ''
@@ -45,29 +45,12 @@ content:
     third_party_settings: {  }
     type: number_decimal
     region: content
-  field_protected:
-    weight: 104
-    label: above
-    settings:
-      format: default
-      format_custom_false: ''
-      format_custom_true: ''
-    third_party_settings: {  }
-    type: boolean
-    region: content
-  field_qty:
-    weight: 102
-    label: above
-    settings:
-      thousand_separator: ''
-      prefix_suffix: true
-    third_party_settings: {  }
-    type: number_integer
-    region: content
   links:
-    weight: 100
+    weight: 0
+    region: content
     settings: {  }
     third_party_settings: {  }
-    region: content
 hidden:
+  field_protected: true
+  field_qty: true
   langcode: true

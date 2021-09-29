@@ -1,5 +1,6 @@
 module:
   automated_cron: 0
+  basic_content: 0
   block: 0
   block_content: 0
   breakpoint: 0
@@ -10,6 +11,8 @@ module:
   config_translation: 0
   contact: 0
   contextual: 0
+  cookie_content_blocker: 0
+  cookies: 0
   dblog: 0
   devel: 0
   devel_generate: 0

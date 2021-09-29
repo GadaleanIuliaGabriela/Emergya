@@ -1,0 +1,11 @@
+uuid: 731e8135-e909-463e-ac3d-b4a9c71f31d5
+langcode: en
+status: true
+dependencies: {  }
+name: Product
+type: product
+description: ''
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true
