@@ -17,5 +17,3 @@ drush cr
 
 # Generate some content
 drush genc 10 --bundles product
-
-chown -R www-data:www-data /var/www
