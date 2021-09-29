@@ -8,3 +8,7 @@ build:
   config:
     CMS_ENVIRONMENT: prod
     SITE_INSTALL: 1
+run:
+  config:
+    CMS_ENVIRONMENT: prod
+    SITE_INSTALL: 1

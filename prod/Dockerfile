@@ -3,6 +3,8 @@ FROM drupal:8-apache
 ARG SITE_INSTALL
 ARG CMS_ENVIRONMENT
 
+
+
 RUN apt-get update && apt-get install -y --no-install-recommends \
   ssl-cert \
 	curl \
@@ -14,7 +16,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 	netcat \
 	wget
 
-COPY . /opt/drupal
+RUN rm -rf /var/www/html/*
+
+COPY ../ /opt/drupal
 
 RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" && \
   php composer-setup.php && \
