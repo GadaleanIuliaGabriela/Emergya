@@ -9,6 +9,7 @@ dependencies:
     - field.field.node.product.field_price
     - field.field.node.product.field_protected
     - field.field.node.product.field_qty
+    - field.field.node.product.field_rate
     - node.type.product
   module:
     - text
@@ -36,4 +37,5 @@ hidden:
   field_price: true
   field_protected: true
   field_qty: true
+  field_rate: true
   langcode: true

@@ -13,7 +13,10 @@ fi
 drush cr
 drush -y updb
 drush -y cim --partial
-drush cr
 
-# Generate some content
-drush genc 10 --bundles product
+if [[ "${SITE_INSTALL}" == "1" ]]; then
+  # Generate some content
+  drush genc 10 --bundles product
+fi
+
+drush cr

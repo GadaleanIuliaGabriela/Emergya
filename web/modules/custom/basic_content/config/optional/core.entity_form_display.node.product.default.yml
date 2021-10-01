@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.product.field_price
     - field.field.node.product.field_protected
     - field.field.node.product.field_qty
+    - field.field.node.product.field_rate
     - image.style.thumbnail
     - node.type.product
   module:
@@ -59,6 +60,13 @@ content:
     region: content
   field_qty:
     weight: 122
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_rate:
+    weight: 126
     settings:
       placeholder: ''
     third_party_settings: {  }

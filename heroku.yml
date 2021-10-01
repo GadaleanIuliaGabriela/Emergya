@@ -7,4 +7,4 @@ build:
     web: Dockerfileprod
   config:
     CMS_ENVIRONMENT: prod
-    SITE_INSTALL: 1
+#    SITE_INSTALL: 1
