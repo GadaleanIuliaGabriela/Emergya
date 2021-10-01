@@ -20,6 +20,8 @@ RUN rm -rf /var/www/html/*
 
 COPY . /opt/drupal
 
+COPY ./ports.conf /etc/apache2/ports.conf
+
 RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" && \
   php composer-setup.php && \
   mv composer.phar /usr/local/bin/composer && \
